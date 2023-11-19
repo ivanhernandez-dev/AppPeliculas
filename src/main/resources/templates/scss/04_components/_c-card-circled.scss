@@ -1,0 +1,20 @@
+.c-card-circled{
+    padding: 50px;
+    font-family: 'OpenSans', Arial, serif;
+
+    &__title{
+        margin-top: 5px;
+        color: var(--title-color);
+    }
+
+    &__desc{
+        color: var(--desc-color);
+    }
+
+    &__link{
+        color: var(--color-secundary);
+        line-height: 2.1rem;
+        margin-top: 1.6rem;
+        text-decoration: underline;
+    }
+}

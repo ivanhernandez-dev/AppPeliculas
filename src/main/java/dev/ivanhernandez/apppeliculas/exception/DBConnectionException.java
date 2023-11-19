@@ -1,7 +1,10 @@
 package dev.ivanhernandez.apppeliculas.exception;
 
-public class DBConnectionException extends RuntimeException {
+public class DBConnectionException extends RuntimeException{
+
+    private static final String DESCRIPTION = "Can't establish connection";
+
     public DBConnectionException(String message) {
-        super(message);
+        super(DESCRIPTION + ". " + message);
     }
 }

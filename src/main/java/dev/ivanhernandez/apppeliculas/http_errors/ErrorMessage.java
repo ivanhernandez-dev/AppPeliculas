@@ -1,16 +1,28 @@
 package dev.ivanhernandez.apppeliculas.http_errors;
 
-import lombok.Getter;
-import lombok.ToString;
-
-@Getter
-@ToString
 public class ErrorMessage {
+
     private final String message;
     private final int code;
 
     public ErrorMessage(String message, int code) {
         this.message = message;
         this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    @Override
+    public String toString() {
+        return "ErrorMessage{" +
+                "message='" + message + '\'' +
+                ", code=" + code +
+                '}';
     }
 }

@@ -1,0 +1,35 @@
+.c-board{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas: 
+        "image title"
+        "image ref";    
+    
+    width: 200px;
+    align-items: center;
+    align-content: stretch;
+    justify-content: start;
+    padding: 10px;
+    transition: box-shadow 0.3s;
+
+    &__image{
+        grid-area: image;
+        margin-right: 10px;
+    }
+
+    &__title {
+        font-weight: bold;
+        grid-area: title;
+    }
+
+    &__ref{
+        color: var(--color-primary);
+        grid-area: ref;
+    }
+}
+
+.c-board:hover{
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}

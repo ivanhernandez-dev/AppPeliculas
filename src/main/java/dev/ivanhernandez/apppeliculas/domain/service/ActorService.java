@@ -3,11 +3,11 @@ package dev.ivanhernandez.apppeliculas.domain.service;
 import dev.ivanhernandez.apppeliculas.domain.entity.Actor;
 
 public interface ActorService {
-    int insert(Actor Actor);
+    int create(Actor actor);
 
-    Actor find(int id);
-
-    void update(Actor Actor);
+    void update(Actor actor);
 
     void delete(int id);
+
+    public Actor find(int id);
 }

@@ -1,7 +1,9 @@
 package dev.ivanhernandez.apppeliculas.exception;
 
-public class ResourceNotFoundException extends RuntimeException {
+public class ResourceNotFoundException  extends RuntimeException{
+    private static final String DESCRIPTION = "Resource not found";
+
     public ResourceNotFoundException(String message) {
-        super(message);
+        super(DESCRIPTION + ". " + message);
     }
 }

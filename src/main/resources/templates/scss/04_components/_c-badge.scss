@@ -1,0 +1,15 @@
+.c-badge{
+    --c-badges-back-ground-color: var(--color-primary-card);
+    --c-badges-color-color: var(--color-secundary);
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 4px 8px 4px 8px;
+
+    border-radius: 10px;
+    border-width: 1px;
+
+    background-color: var(--c-badges-back-ground-color);
+    color: var(--c-badges-color-color);
+}

@@ -1,0 +1,24 @@
+.c-card-icons{
+    margin-top: 30px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 18px;
+    padding: 0 10px;
+    max-width: 350px;
+
+    &__title{
+        font-weight: bold;
+    }
+
+    &__text{
+        color:var(--color-gris);
+    }
+    
+    &__link{
+        color:var(--color-link);
+    }
+}
+
+
+
+

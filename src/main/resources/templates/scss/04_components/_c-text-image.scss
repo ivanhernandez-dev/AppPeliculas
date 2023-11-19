@@ -1,0 +1,24 @@
+.c-text-image{
+    border-width: 1px;
+    padding: 50px;
+    border-style: solid;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    
+    &--titulo{
+        font-size: 40px;
+    }
+    
+    &--subtitulo{
+        font-size: 15px;
+        color: gray;
+    }
+}

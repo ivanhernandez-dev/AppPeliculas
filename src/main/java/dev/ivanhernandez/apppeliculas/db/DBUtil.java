@@ -1,7 +1,7 @@
 package dev.ivanhernandez.apppeliculas.db;
 
 import dev.ivanhernandez.apppeliculas.exception.DBConnectionException;
-import dev.ivanhernandez.apppeliculas.exception.SQLStatmentException;
+import dev.ivanhernandez.apppeliculas.exception.SQLStatementException;
 import org.springframework.stereotype.Component;
 
 import java.sql.*;
@@ -14,13 +14,14 @@ public class DBUtil {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 
-    public static Connection open(){
+    public static Connection open(boolean autoCommit){
         try {
             Connection connection = DriverManager.getConnection(
                     URL_CONNECTION,
                     USERNAME,
                     PASSWORD
             );
+            connection.setAutoCommit(autoCommit);
             return connection;
         } catch (SQLException e) {
             throw new DBConnectionException("Connection paramaters :\n\n" + getParameters() + "\nOriginal exception message: " + e.getMessage());
@@ -63,7 +64,7 @@ public class DBUtil {
                 throw new RuntimeException("Cannot read last generated id");
             }
         } catch (SQLException e) {
-            throw new SQLStatmentException("SQL: " + sql);
+            throw new SQLStatementException("SQL: " + sql);
         }
     }
 
@@ -74,7 +75,7 @@ public class DBUtil {
             int numRows = preparedStatement.executeUpdate();
             return numRows;
         } catch (SQLException e) {
-            throw new SQLStatmentException("SQL: " + sql);
+            throw new SQLStatementException("SQL: " + sql);
         }
     }
 
@@ -98,8 +99,7 @@ public class DBUtil {
             PreparedStatement preparedStatement = setParameters(connection, sql, values);
             return preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new SQLStatmentException("SQL: " + sql);
+            throw new SQLStatementException("SQL: " + sql);
         }
     }
-
 }
